@@ -1,7 +1,6 @@
 import "./index.css";
 import Box from "../box";
 import ListItem from "../list-item";
-// import test from ", /test.svg";
 
 export default function Price({ price, discount, currency, ...rest }) {
   return (

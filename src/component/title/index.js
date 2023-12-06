@@ -17,8 +17,7 @@ export default function Title({
         <span className="title__sub-value">{review} відгуків</span>
 
         <span className="title__sub-value">
-          {" "}
-          {city}, {country}{" "}
+          {city}, {country}
         </span>
         {superhost && <span className="title__sub-value">Cупер-хост</span>}
       </div>{" "}

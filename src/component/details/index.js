@@ -6,7 +6,7 @@ import test from "./test.svg";
 import bed from "./bed.svg";
 import bedroom from "./bedroom.svg";
 
-export default function Details({ guests, bedrooms, beds, ...rest }) {
+export default function Details({ guests, bedrooms, beds, beths, ...rest }) {
   return (
     <Box shadow className="price">
       <Heading border>Деталі властивості:</Heading>
@@ -15,7 +15,7 @@ export default function Details({ guests, bedrooms, beds, ...rest }) {
 
         <span className={`price__value`}>{bedrooms}</span>
       </div>
-      <List {...rest} beds={beds} />
+      <List guests={2} bedrooms={1} beds={1} beths={1} {...rest} />
     </Box>
   );
 }

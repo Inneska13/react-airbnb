@@ -6,6 +6,11 @@ import Price from "./component/price";
 import RoomList from "./component/room-list";
 import Description from "./component/description";
 import Details from "./component/details";
+import Amenities from "./component/amenities";
+import Contact from "./component/contact-info";
+import Properties from "./component/properties";
+import Reviews from "./component/reviews";
+import Attractions from "./component/attractions";
 
 function App() {
   const data = {
@@ -101,7 +106,7 @@ function App() {
         "Public buses and taxis available within walking distance.",
       host_languages: ["English", "Spanish"],
       special_offers: "10% discount for bookings of 7 nights or more.",
-      "check-in_instructions":
+      check_in_instructions:
         "Check-in time is 3:00 PM. Please contact us in advance with your estimated arrival time.",
     },
 
@@ -176,8 +181,26 @@ function App() {
       />
       <RoomList list={data.roomTypes} />
       <Description title="Oпис" children={data.description} />
-      <Description title="Про сусідів" children={data.neighborhood_info} />
+
       <Details children={data.details} />
+      <Description title="Про сусідів" children={data.neighborhood_info} />
+      <Amenities children={data.amenities} />
+      <Contact
+        name={data.contact_info.name}
+        phone={data.contact_info.phone}
+        response_rate={data.contact_info.response_rate}
+        info={data.contact_info.info}
+      />
+      <Properties
+        house_rules={data.additional_properties.house_rules}
+        cancellation_policy={data.additional_properties.cancellation_policy}
+        local_transportation={data.additional_properties.local_transportation}
+        host_languages={data.additional_properties.host_languages}
+        special_offers={data.additional_properties.special_offers}
+        check_in_instructions={data.additional_properties.check_in_instructions}
+      />
+      <Reviews list={data.guestReviews} />
+      <Attractions list={data.nearbyAttractions} />
     </Page>
   );
 }
